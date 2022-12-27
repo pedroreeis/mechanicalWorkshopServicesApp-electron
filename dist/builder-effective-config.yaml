@@ -1,0 +1,14 @@
+directories:
+  output: dist
+  buildResources: public
+files:
+  - filter:
+      - build/**/*
+      - build/**/*
+      - node_modules/**/*
+extraMetadata:
+  main: build/electron.js
+appId: com.queendev.electron
+productName: finance
+extends: react-cra
+electronVersion: 22.0.0
