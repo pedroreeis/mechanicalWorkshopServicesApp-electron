@@ -1,5 +1,5 @@
 {
-  "name": "financecontrolapp",
+  "name": "mechanicworkshopservicesapp",
   "author": {
     "email": "pedroandradereis2007@gmail.com",
     "name": "Pedro Reis",
@@ -8,12 +8,13 @@
   "version": "1.0.0",
   "main": "public/electron.js",
   "homepage": "./",
-  "description": "A simple finance app.",
+  "description": "Este projeto une as tecnologias React e Electron, para desenvolver um programa disponível para Windows, Linux e MacOS sobre gerenciamento de serviços mecanicos.",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.2",
     "electron-is-dev": "^2.0.0",
     "node-sass": "^7.0.3",
     "react": "^17.0.2",
@@ -36,7 +37,10 @@
   },
   "build": {
     "appId": "com.queendev.electron",
-    "productName": "finance",
+    "productName": "mechanicworkshopservices",
+    "win": {
+      "icon": "public/icon.ico"
+    },
     "files": [
       "build/**/*",
       "node_modules/**/*"

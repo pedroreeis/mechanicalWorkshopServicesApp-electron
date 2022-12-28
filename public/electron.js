@@ -5,9 +5,8 @@ const isDev = require('electron-is-dev');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    show: false,
+    width: 1024,
+    height: 768,
     webPreferences: {
       preload: path.join(__dirname, "preloader.js"),
     }
@@ -20,8 +19,6 @@ function createWindow() {
   );
   
   win.setMenuBarVisibility(false);
-  win.maximize();
-  win.show();
 }
 
 app.whenReady().then(() => {

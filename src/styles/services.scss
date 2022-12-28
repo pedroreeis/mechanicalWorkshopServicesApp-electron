@@ -1,0 +1,61 @@
+.service {
+  background: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+
+  & + .service {
+      margin-top: 8px;
+  }
+
+  &.highlighted {
+      background: #F4F0FF;
+      border: 1px solid #fbd13b;
+      footer span {
+          color: #29292e;
+      }
+  }
+
+  &.completed {
+      background: #dbdcdd;
+  }
+
+  p {
+      color: #29292e;
+  }
+
+  footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+
+      > div {
+          display: flex;
+          gap: 16px;
+      }
+
+      button {
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+          transition: filter 0.2s;
+
+          &.like-button {
+              display: flex;
+              align-items: flex-end;
+              color: #737380;
+              gap: 8px;
+              &.liked {
+                  color: #fbd13b;
+                  svg path {
+                      stroke: #fbd13b;
+                  }
+              }
+          }
+          &:hover {
+              filter: brightness(0.7);
+          }
+      }
+  }
+}

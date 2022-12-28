@@ -9,6 +9,8 @@ files:
 extraMetadata:
   main: build/electron.js
 appId: com.queendev.electron
-productName: finance
+productName: mechanicworkshopservices
+win:
+  icon: public/icon.ico
 extends: react-cra
 electronVersion: 22.0.0
