@@ -64,6 +64,7 @@ export function Home() {
             <h3>Nenhum serviço no momento</h3>
           ) : (
             services
+              .sort((a, b) => b.isHighlighted - a.isHighlighted)
               .map(services => {
                 return (
                   <Service

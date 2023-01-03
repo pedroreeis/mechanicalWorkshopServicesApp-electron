@@ -1,8 +1,8 @@
 version: 1.0.0
 files:
   - url: mechanicworkshopservices-Setup-1.0.0.exe
-    sha512: 3t5tED3YFoOPO6zXpJVWI8iGcikiHGu4JXtcM1BgOYI5dogoQIf4qaNbnddxeZPb3iArmWiciRvuhAJEwHKy0g==
-    size: 101096049
+    sha512: BAEw7PE/5TMiO4gN+PY3eXg4r0E9fwVOiD/Owx7P2xUmzoeqPqyGSM0L3IYjN1m6D801o5TvxIvQV7/iYpCugg==
+    size: 101096485
 path: mechanicworkshopservices-Setup-1.0.0.exe
-sha512: 3t5tED3YFoOPO6zXpJVWI8iGcikiHGu4JXtcM1BgOYI5dogoQIf4qaNbnddxeZPb3iArmWiciRvuhAJEwHKy0g==
-releaseDate: '2023-01-03T01:06:51.351Z'
+sha512: BAEw7PE/5TMiO4gN+PY3eXg4r0E9fwVOiD/Owx7P2xUmzoeqPqyGSM0L3IYjN1m6D801o5TvxIvQV7/iYpCugg==
+releaseDate: '2023-01-03T01:25:42.171Z'
