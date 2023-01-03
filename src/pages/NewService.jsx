@@ -62,8 +62,7 @@ export function NewService() {
       <div className="content">
         <img src={logoImg} alt="Logomarca do aplicativo."/>
         <div>
-          <Link to="/"><Button isInvisible>Serviços pendentes</Button></Link>
-          <Link to="/servicecompleted"><Button isInvisible>Serviços concluidos</Button></Link>
+          <Link to="/"><Button isInvisible>Serviços</Button></Link>
           <Link to="/newservice"><Button isOutlined>Novo serviço</Button></Link>
         </div>
       </div>

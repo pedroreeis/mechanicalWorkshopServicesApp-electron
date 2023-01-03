@@ -6,6 +6,7 @@ import { Service } from '../components/Service'
 import deleteImg from '../images/delete.svg';
 import completeImg from '../images/check.svg';
 import highlightImg from '../images/like.svg';
+import returnImg from '../images/return.svg'
 
 import logoImg from '../images/logo.png';
 
@@ -17,7 +18,7 @@ import { app } from '../services/firebase'
 import { getDatabase, ref, remove, update } from 'firebase/database';
 
 export function Home() {
-  const { services } = useService();
+  const { services } = useService(); //problema ta aqui
 
   const database = getDatabase(app);
 
@@ -30,6 +31,13 @@ export function Home() {
     const serviceRef = ref(database, `services/${serviceId}`);
     await update(serviceRef, {
       isCompleted: true,
+    })
+  } 
+
+  async function handleUncompleteService(serviceId) {
+    const serviceRef = ref(database, `services/${serviceId}`);
+    await update(serviceRef, {
+      isCompleted: false,
     })
   } 
 
@@ -46,8 +54,7 @@ export function Home() {
       <div className="content">
         <img src={logoImg} alt="Logomarca do aplicativo."/>
         <div>
-          <Link to="/"><Button isInvisible>Serviços pendentes</Button></Link>
-          <Link to="/servicecompleted"><Button isInvisible>Serviços concluidos</Button></Link>
+          <Link to="/"><Button isInvisible>Serviços</Button></Link>
           <Link to="/newservice"><Button isOutlined>Novo serviço</Button></Link>
         </div>
       </div>
@@ -55,7 +62,7 @@ export function Home() {
     
     <main>
       <div className="page-title">
-        <h1>Serviço(s) pendentes.</h1>
+        <h1>Serviço(s).</h1>
         { services.length > 0 && <span>{services.length} serviço(s)</span> }
       </div>
 
@@ -67,6 +74,7 @@ export function Home() {
               .sort((a, b) => b.isHighlighted - a.isHighlighted)
               .map(services => {
                 return (
+                  <>
                   <Service
                     key={services.id}
                     content={services.content}
@@ -79,22 +87,36 @@ export function Home() {
                     isCompleted={services.isCompleted}
                     isHighlighted={services.isHighlighted}
                     >
-                      <button
-                        type='button'
-                        onClick={() => handleCompleteService(services.id)}>
-                          <img src={completeImg} alt="Completar serviço" />
-                      </button>
+                      {!services.isCompleted && (
+                        <>
+                          <button
+                            type='button'
+                            onClick={() => handleCompleteService(services.id)}>
+                              <img src={completeImg} alt="Completar serviço" />
+                          </button>
+                          <button
+                            type='button'
+                            onClick={() => handleHighlightService(services.id)}>
+                              <img src={highlightImg} alt="Destacar serviço" />
+                          </button>
+                        </>
+                      )}
+                      {services.isCompleted && (
+                        <>
+                          <button
+                            type='button'
+                            onClick={() => handleUncompleteService(services.id)}>
+                              <img src={returnImg} alt="Descompletar serviço" />
+                          </button>
+                        </>
+                      )}
                       <button
                         type='button'
                         onClick={() => handleDeleteService(services.id)}>
                           <img src={deleteImg} alt="Deletar Serviço" />
                       </button>
-                      <button
-                        type='button'
-                        onClick={() => handleHighlightService(services.id)}>
-                          <img src={highlightImg} alt="Destacar serviço" />
-                      </button>
                   </Service>
+                  </>
                 )
               })
           )}
