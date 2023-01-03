@@ -1,0 +1,17 @@
+{
+  "services": {
+    "serviceId": {
+      "licensePlate": "",
+      "vehModel": "",
+      "owner": {
+        "name": "",
+        "location": "",
+        "contact": ""
+      },
+      "servicePrice": "",
+      "isCompleted": false,
+      "isHighlighted": false,
+      "content": ""
+    }
+  }
+}

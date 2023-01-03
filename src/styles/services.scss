@@ -9,8 +9,8 @@
   }
 
   &.highlighted {
-      background: #F4F0FF;
-      border: 1px solid #fbd13b;
+      background: #fff9f0c7;
+      border: 1px solid #ff5936;
       footer span {
           color: #29292e;
       }
@@ -24,6 +24,31 @@
       color: #29292e;
   }
 
+  header {
+    button {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        transition: filter 0.2s;
+
+        &.like-button {
+            display: flex;
+            align-items: flex-end;
+            color: #737380;
+            gap: 8px;
+            &.liked {
+                color: #fbbe3b;
+                svg path {
+                    stroke: #fbbe3b;
+                }
+            }
+        }
+        &:hover {
+            filter: brightness(0.7);
+        }
+    }
+  }
+
   footer {
       display: flex;
       justify-content: space-between;
@@ -34,6 +59,17 @@
           display: flex;
           gap: 16px;
       }
+
+      .service-info {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-top: 8px;
+            color: #737380;
+            font-size: 14px;
+        }
+    }
 
       button {
           border: 0;
@@ -47,9 +83,9 @@
               color: #737380;
               gap: 8px;
               &.liked {
-                  color: #fbd13b;
+                  color: #fbbe3b;
                   svg path {
-                      stroke: #fbd13b;
+                      stroke: #fbbe3b;
                   }
               }
           }

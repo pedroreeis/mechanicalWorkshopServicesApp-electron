@@ -5,7 +5,7 @@ const isDev = require('electron-is-dev');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1024,
+    width: 1366,
     height: 768,
     webPreferences: {
       preload: path.join(__dirname, "preloader.js"),
@@ -24,7 +24,7 @@ function createWindow() {
 app.whenReady().then(() => {
   createWindow();
 
-  app.on("active", () => {
+  app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   })
 });

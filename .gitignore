@@ -8,7 +8,7 @@
 
 # production
 /build
-/dist/win-unpacked
+/dist
 
 # misc
 .DS_Store
